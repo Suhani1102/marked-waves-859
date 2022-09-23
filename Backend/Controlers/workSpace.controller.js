@@ -4,11 +4,17 @@ const authentication  = require("../Middleware/authentication");
 const UserModel = require("../Modals/user.model");
 const workspace = Router();
 
+
+// Reviewed for: fw16_016 - Always use try/catch with async/await
+
 workspace.get("/",authentication,async(req,res)=>{
     const {userId} = req.body
     const workSpaces = await WorkSpaceModel.find({userId})
     return res.send({workSpaces:workSpaces})
 })
+
+// Reviewed for: fw16_016 - You have been doing a lot of things in the given route
+// This is actually not a controller, you are registering route here and it should be route
 workspace.post("/create",authentication,async(req,res)=>{
     const {teamSize,companyName,userId} = req.body;
     if(!companyName) return res.send({message:"Please fill the company name"})
