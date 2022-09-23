@@ -21,7 +21,7 @@ app.use("/auth",user)
 app.use("/project", projectController)
 app.use("/workspace",workspace)
 app.use("/task",task)
-
+// Reviewed for: why do we have this route? Spacing should be maintained
 app.get("/",(req,res)=>{
     res.send("heroku")
 
