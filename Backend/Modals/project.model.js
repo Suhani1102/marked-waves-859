@@ -8,6 +8,7 @@ const schema = new mongoose.Schema({
     notes: { type: String, required: false }
 })
 
+// Reviewed for: fw17_0415 and fw16_117: Always keep first letter of Model capital: Project
 const ProjectModel = mongoose.model("project", schema)
 
 module.exports = ProjectModel
