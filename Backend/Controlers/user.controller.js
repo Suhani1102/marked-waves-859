@@ -14,6 +14,11 @@ user.post("/signup",async(req,res)=>{
     if(user) return res.send({message : "Account with this Email id already exists."})
     if(!email) return res.send({message : "please enter EmailId."})
     if(!email.includes("@gmail.com")) return res.send({message:"Please enter correct emailId."})
+    
+    // Reviewed for: fw17_0415 and fw16_016 - use async/await only to make things uniform across the code
+    // use await at user.save()
+    // Never send what is incorrect with the username or password, Also, how can password be wrong on singup page?
+    // You are just siging a JWT token and if there is issue that is not because of wrong password
     bcrypt.hash(password,10, function(err, hash) {
         if(err) return res.send({message:"Unable to account create"})
         const user = new UserModel ({
@@ -28,6 +33,8 @@ user.post("/signup",async(req,res)=>{
        
     });
 })
+
+// Reviewed for: fw17_0415 and fw16_016 - use auth middleware to check if user is authenticated and send to next middleware
 
 user.post("/signin",async(req,res)=>{
     const {email,password} = req.body;
