@@ -14,6 +14,7 @@ task.get("/",authentication, async(req,res)=>{
 task.post("/create",authentication,async(req,res)=>{
     const {creater,assignee,projectName,userId,taskName,taskStatus} = req.body;
     const user = await UserModel.findOne({userId})
+    // Reviewed for: fw16_016 and fw17_0415: you can use creater from the req.body and don't need extra call to DB
     const task = new TaskModel({
         creater:user.name,assignee,projectName,userId,taskName,taskStatus
     })
