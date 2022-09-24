@@ -25,6 +25,8 @@ import React, { useState } from "react";
 import "../App.css";
 import { useEffect } from "react";
 
+// Reviewed for: fw15_451 - very big component, can we refactor it to reduce its length and re-use existing components?
+// There is a lot code that is re-written try to put that code in one-place and resue it
 const Pricing = () => {
   const [teamSize, setTeamSize] = useState(1);
   const [subscriptionType, setSubscriptionType] = useState("Annually");
