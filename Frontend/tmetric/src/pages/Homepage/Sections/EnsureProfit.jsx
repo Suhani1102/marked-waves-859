@@ -36,6 +36,7 @@ const EnsureProfit = () => {
             marginStart="2rem"
             fontWeight="500"
           >
+              {/* Reviewed for: fw15_451 - use loops */}
             <ListItem>project management</ListItem>
             <ListItem>project budgeting</ListItem>
             <ListItem>billing and invoicing</ListItem>
