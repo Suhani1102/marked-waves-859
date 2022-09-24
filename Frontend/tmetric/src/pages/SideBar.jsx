@@ -5,6 +5,7 @@ import { BiTask } from "react-icons/bi";
 import Ts from "../components/Ts";
 import { Link } from "react-router-dom";
 
+// Reviewed for: fw16_117 and fw16_016 - Avoid SVGs like this, put them in assets and use.
 function SideBar({showAdd}) {
     const sidebarRef = useRef(null);
     const [barToggle, setBarToggle] = useState(true);
