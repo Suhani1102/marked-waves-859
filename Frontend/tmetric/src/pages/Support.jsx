@@ -2,6 +2,8 @@ import React from "react";
 import style from "../Styles/Support.module.css";
 import { IoMdSearch } from "react-icons/io";
 import { BsFillArrowUpRightSquareFill } from "react-icons/bs";
+
+// Reviewed for: fw16_078 and fw15_451 - Divide component in smaller components
 const Support = () => {
   return (
     <div>
@@ -35,7 +37,7 @@ const Support = () => {
         <div>
           <h2 className={style.videosph2}>Quick Start Videos</h2>
         </div>
-
+{/* Reviewed for: fw16_078 and fw15_451: use loops to render list, pass URLs from constant file */}
         <ul className={style.videospvideo}>
           <li className={style.videospvideo1}>
             <img
@@ -192,6 +194,7 @@ const Support = () => {
                 alt=""
               />
             </div>
+{/* Reviewed for: fw16_078 and fw15_451: these heading can be rendered using one component, you need to pass dynamic data to it */}
             <div>
               <h2 className={style.userguide1h2}>Time Off</h2>
               <p className={style.userguide1p}>
