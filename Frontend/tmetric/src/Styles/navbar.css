@@ -1,3 +1,25 @@
+
+/* 
+   Reviewed for: fw15_451 - use nesting and/or grouping wherever possible
+   For ex: 
+   nav {
+   position: fixed;
+   width: 100%;
+   z-index: 999;
+   background-color: #fbefca;
+   top: 0;
+
+      .wrapper {
+      max-width: 100vw;
+      padding: 0 1rem;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+     }
+}
+It is applied to wrapper under nav and to nav also.
+/*
 nav {
   position: fixed;
   width: 100%;
