@@ -45,6 +45,7 @@ const EditProjectPage = () => {
       </div>
       <div className={styles.form_content_div}>
         <div className={styles.form_content_btn_div}>
+            {/* Reviewed for: fw16_117 and fw17_0415 - you can use loop here to render button with index */}
           <button
             onClick={() => {
               handlebtn(0);
