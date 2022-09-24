@@ -94,6 +94,7 @@ const Industry = () => {
            <div className="indus-company">
             <p>Used and trusted by 3000+ businesses in the world</p>
             <div className="company-logos">
+              {/* Reviewed for: Use loops and URLs from constant file*/}
                 <img src="https://tmetric.com/media/wdgiiy51/logo-business-glide.svg" alt="" />
                 <img src="https://tmetric.com/media/uzplg3xo/logo-business-microscope-it.svg" alt="" />
                 <img src="https://tmetric.com/media/wtvdfb00/logo-business-chc-advocacia.svg" alt="" />
