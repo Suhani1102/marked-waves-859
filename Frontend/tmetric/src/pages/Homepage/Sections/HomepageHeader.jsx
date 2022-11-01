@@ -41,11 +41,31 @@ const HomepageHeader = () => {
           ></iframe>
         </Box>
       )}
-      <HStack bg={"#FBEFCA"} pt="6.25rem" pb="1.25rem" pl="80px" pr="80px">
-        <Box w="50%" p="0 15px">
+      <HStack
+        bg={"#FBEFCA"}
+        pt="6.25rem"
+        pb="1.25rem"
+        pl={{ base: "20px", sm: "25px", md: "40px", lg: "80px" }}
+        pr={{ base: "20px", sm: "25px", md: "40px", lg: "80px" }}
+        flexDirection={{
+          base: "column",
+          sm: "column",
+          md: "column",
+          lg: "row",
+        }}
+      >
+        <Box
+          w={{ base: "80%", sm: "100%", md: "100%", lg: "50%" }}
+          p={{ sm: "0", md: "0", lg: "0 15px" }}
+        >
           <Heading
             as="h1"
-            fontSize="3.75rem"
+            fontSize={{
+              base: "2.75rem",
+              sm: "2.75rem",
+              md: "2.75rem",
+              lg: "3.75rem",
+            }}
             fontWeight="bold"
             mb="1rem"
             noOfLines={2}
@@ -70,7 +90,15 @@ const HomepageHeader = () => {
               size="md"
             />
           </InputGroup>
-          <HStack>
+          <HStack
+            flexDirection={{
+              base: "column",
+              sm: "column",
+              md: "row",
+              lg: "row",
+            }}
+            justifyContent="flex-start"
+          >
             <Button
               size="md"
               bg="#3070f0"
@@ -83,7 +111,10 @@ const HomepageHeader = () => {
             <Text marginStart="1rem">Fully Functional 30-Day Trial</Text>
           </HStack>
         </Box>
-        <Box w="50%" p="0 15px">
+        <Box
+          w={{ sm: "100%", md: "100%", lg: "50%" }}
+          p={{ sm: "25px 0", md: "25px 0", lg: "0 15px" }}
+        >
           <Box onClick={() => setVideo(true)} position="relative">
             <Image
               src="https://tmetric.com/media/w53hmkzd/img-video-cover.png"
