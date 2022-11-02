@@ -85,7 +85,11 @@ const FeaturesInfo = () => {
             </TabPanel>
           ))}
         </TabPanels>
-        <TabList aria-orientation="vertical" maxW="33.33333%" p="0 30px">
+        <TabList
+          aria-orientation="vertical"
+          maxW={{ lg: "33.33333%" }}
+          p="0 30px"
+        >
           {featureTypes.map((item) => (
             <Tab
               key={item.id}
