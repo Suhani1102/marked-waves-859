@@ -188,6 +188,7 @@ const TaskContHead = () => {
                         onClick={PostNewTask}
                         >+ New task</div>
                 </div>
+                {/* Reviewed for: fw16_016 and fw17_0415 : use loops to show same elements in the view*/}
                 <div className={styles.SortDIv}>
                     <Select>
                         <option value="Project">Project</option>

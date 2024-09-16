@@ -5,7 +5,7 @@ const taskSchema = new mongoose.Schema({
     assignee : {type:String},
     projectName: {type:String},
     creater : "String",
-    dueDate : String,
+    dueDate : String, // Reviewed for: fw16_016 - Can't we use date type here?
     workSpaceId:String,
     userId:String,
     projectId:String,

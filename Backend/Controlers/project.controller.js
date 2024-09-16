@@ -2,6 +2,8 @@ const express = require('express')
 const authentication = require('../Middleware/authentication')
 const ProjectModel = require('../Modals/project.model')
 const projectController = express.Router()
+
+// Reviewed for: fw16_117, fw16_016 and fw17_0415 - You can't send "You are not Authorized" in this route, you should send it middleware
 // --------------------------------------------------------------------------------------------------->
 projectController.get("/", authentication, async (req, res)=>{
 
@@ -29,7 +31,7 @@ projectController.get("/", authentication, async (req, res)=>{
 })
 // --------------------------------------------------------------------------------------------------->
 projectController.post("/create", authentication, async(req, res)=>{
-
+   // Reviewed for: fw16_117, fw16_016 and fw17_0415 - no need of await
     const new_project = await new ProjectModel({
         ...req.body,
     })
@@ -42,6 +44,8 @@ projectController.post("/create", authentication, async(req, res)=>{
 projectController.delete("/delete/:projectId", authentication, async (req, res)=>{
     const {projectId} = req.params
     const {userId} = req.body
+    // Reviewed for: fw16_117, fw16_016 and fw17_0415 - You can use findOneAndDelete({_id:projectId, userId})
+    // Try to optimise calls to DB (They are expensive)
     const project = await ProjectModel.findOne({_id:projectId})
     if(project.userId === userId){
         const deleted_project = await ProjectModel.findOneAndDelete({_id:projectId})
@@ -58,6 +62,7 @@ projectController.delete("/delete/:projectId", authentication, async (req, res)=
 projectController.patch("/patch/:projectId", authentication, async (req, res)=>{
     const {projectId} = req.params
     const {userId} = req.body
+    // Reviewed for: fw16_117, fw16_016 and fw17_0415 - findOneAndUpdate use this only 
     const details = await ProjectModel.findOne({_id:projectId})
     if(details.userId === userId){
         const newProject = await ProjectModel.findOneAndUpdate({_id:projectId}, req.body, {new:true})

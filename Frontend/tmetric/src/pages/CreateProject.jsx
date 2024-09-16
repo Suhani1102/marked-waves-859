@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { create_project } from "../redux/app/action";
 
+// Reviewed for: fw16_117 and fw16_016 - Divide this component into smaller one
 const CreateProject = () => {
   const ref = useRef([]);
   const navigate = useNavigate();

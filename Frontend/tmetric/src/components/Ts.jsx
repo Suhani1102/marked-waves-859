@@ -29,6 +29,7 @@ function Ts() {
         <AccordionIcon />
       </AccordionButton>
     </h2>
+{/* Reviewed for: fw16_117 and fw17_0415: I see You have passed different config to Accordion panel, you can create one comp and pass this dynamic config to it*/}
     <AccordionPanel pb={4}>
         <div style={{display:"flex",gap:"10px",marginLeft:"30px"}}>
             <span><GoGraph /></span>

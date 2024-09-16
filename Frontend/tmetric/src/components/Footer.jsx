@@ -15,6 +15,8 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 
+
+// Reviewed for: you can use loops for rendering list if possible
 const Footer = () => {
   return (
     <div>

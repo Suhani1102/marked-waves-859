@@ -4,6 +4,9 @@ import "../Styles/time.css";
 import { MdFilterList } from "react-icons/md";
 import { BsChevronDown } from "react-icons/bs";
 import { FaRegCalendarAlt,FaPlayCircle,FaRegStopCircle} from "react-icons/fa";
+
+// Reviewed for: fw17_0415 - Use constants for static content or JSON file
+// I see redundant code
 const Time = () => {
   return (
     <div className="time-section">
@@ -35,6 +38,7 @@ const Time = () => {
             No activity is recorded for this day. Use desktop app to track user
             activity
           </p>
+{/* Reviewed for: fw17_0415 - why do we have same div? Any specific reason */}
           <div className="timebar-pointer"></div>
           <div className="time-stamp">
             <div>

@@ -57,7 +57,8 @@ console.log(activity)
 
 
 console.log(tasks,"projectName")
-    
+  // Reviewed for: fw16_016 and fw17_0415 - try to divide big components in smaller modules
+  // they are easy to debug and you have opportunities to re-use existing code
   return (
     <div className={styles.NewTaskCompWrapper}>
 {/* ====================Left wing=================== */}
@@ -104,6 +105,8 @@ console.log(tasks,"projectName")
                           className={styles.markDoneCont}
                           onClick={()=>setStart(!start)}
                         >
+                            {/* Reviewed for: fw16_016 and fw17_0415: className can be more meaningful (just a suggestion nothing wrong with them) and you can create CSS 4 variables for such things as they will be used multiple times */}
+
                             <div>{!start ? <i style={{fontSize:"24px",color:"green"}} className="fa-solid fa-play"></i> :  <i style={{fontSize:"24px",color:"red"}}  className={styles.stopicon} class ="fa-solid fa-stop"></i>}</div>
                         </div> 
                         
